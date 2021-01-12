@@ -4,9 +4,6 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
-bin/
-bin_linux/
-bin_osx/
 obj/
 Proj3_server_1.2/
 *.zip
