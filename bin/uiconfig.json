@@ -1,0 +1,16 @@
+{
+  "logFile": "log_xxxxxxxx_xxxxxx.csv",
+  "displayConfig": {
+    "panelFile": "panel",
+    "me": "A",
+    "enemy": "V",
+    "myColorCode": 92,
+    "enemyColorCode": 94,
+    "chessmanPlaceholder": "!",
+    "intersection": "*",
+    "gapH": " ",
+    "gapV": " ",
+    "blockH": "-",
+    "blockV": "|"
+  }
+} 
