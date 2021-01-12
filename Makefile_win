@@ -1,0 +1,48 @@
+client_objs = obj/ClientMain.o obj/Configuration.o obj/MyPlayer.o obj/XlinePlayer.o obj/DefensivePlayer.o obj/RunPlayer.o obj/DefensiveRunPlayer.o obj/BaselinePlayer.o obj/NetworkClient.o obj/QuoridorUtils.o
+ui_objs = obj/QuoridorUIMain.o obj/Replayer.o obj/LogLoader.o obj/ConsoleView.o obj/QuoridorUtils.o
+gcc_var = -O3 -std=c++11 -I libs/include
+
+all : objDir QuoridorClient QuoridorUI
+
+QuoridorUI : $(ui_objs)
+	g++ -std=c++11 -o bin/QuoridorUI $(ui_objs) -static
+
+QuoridorClient : $(client_objs)
+	g++ -std=c++11 -o bin/QuoridorClient $(client_objs) -lWs2_32 -lrpcrt4 -static
+
+obj/QuoridorUIMain.o : QuoridorUI/QuoridorUI.cpp
+	g++ $(gcc_var) -o obj/QuoridorUIMain.o -c QuoridorUI/QuoridorUI.cpp
+obj/Replayer.o : QuoridorUI/Replayer.cpp QuoridorUI/Replayer.h
+	g++ $(gcc_var) -o obj/Replayer.o -c QuoridorUI/Replayer.cpp
+obj/LogLoader.o : QuoridorUI/LogLoader.cpp QuoridorUI/LogLoader.h
+	g++ $(gcc_var) -o obj/LogLoader.o -c QuoridorUI/LogLoader.cpp
+obj/ConsoleView.o : QuoridorUI/ConsoleView.cpp QuoridorUI/ConsoleView.h
+	g++ $(gcc_var) -o obj/ConsoleView.o -c QuoridorUI/ConsoleView.cpp
+obj/ClientMain.o : QuoridorClient/Client.cpp
+	g++ $(gcc_var) -o obj/ClientMain.o -c QuoridorClient/Client.cpp
+obj/Configuration.o : QuoridorClient/Configuration.cpp QuoridorClient/Configuration.h
+	g++ $(gcc_var) -o obj/Configuration.o -c QuoridorClient/Configuration.cpp
+obj/MyPlayer.o : QuoridorClient/MyPlayer.cpp QuoridorClient/MyPlayer.h
+	g++ $(gcc_var) -o obj/MyPlayer.o -c QuoridorClient/MyPlayer.cpp
+obj/XlinePlayer.o : QuoridorClient/XlinePlayer.cpp QuoridorClient/XlinePlayer.h
+	g++ $(gcc_var) -o obj/XlinePlayer.o -c QuoridorClient/XlinePlayer.cpp
+obj/DefensivePlayer.o : QuoridorClient/DefensivePlayer.cpp QuoridorClient/DefensivePlayer.h
+	g++ $(gcc_var) -o obj/DefensivePlayer.o -c QuoridorClient/DefensivePlayer.cpp
+obj/RunPlayer.o : QuoridorClient/RunPlayer.cpp QuoridorClient/RunPlayer.h
+	g++ $(gcc_var) -o obj/RunPlayer.o -c QuoridorClient/RunPlayer.cpp
+obj/DefensiveRunPlayer.o : QuoridorClient/DefensiveRunPlayer.cpp QuoridorClient/DefensiveRunPlayer.h
+	g++ $(gcc_var) -o obj/DefensiveRunPlayer.o -c QuoridorClient/DefensiveRunPlayer.cpp
+obj/BaselinePlayer.o : QuoridorClient/BaselinePlayer.cpp QuoridorClient/BaselinePlayer.h
+	g++ $(gcc_var) -o obj/BaselinePlayer.o -c QuoridorClient/BaselinePlayer.cpp
+obj/NetworkClient.o : QuoridorClient/NetworkClient.cpp QuoridorClient/NetworkClient.h
+	g++ $(gcc_var) -o obj/NetworkClient.o -c QuoridorClient/NetworkClient.cpp
+obj/QuoridorUtils.o : QuoridorUtils/QuoridorUtils.cpp QuoridorUtils/QuoridorUtils.h
+	g++ $(gcc_var) -o obj/QuoridorUtils.o -c QuoridorUtils/QuoridorUtils.cpp
+
+objDir :
+	-md obj
+
+.PHONY : clean all
+clean :
+	-del obj\*.o
+	-del bin\Quoridor*.exe
