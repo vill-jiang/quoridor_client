@@ -47,7 +47,7 @@ Mode                 LastWriteTime         Length Name
 ### linux 编译
 ### osx 编译
 
-仅在 linux 下测试。
+仅在 linux 下测试，**注意：**更低版本的gcc/g++(例如 4.8.5)编译会因regex不兼容而出错。
 
 ```shell
 $ g++ --version
@@ -170,7 +170,10 @@ start game!
 choose quit(q), prev(p) or next(n, \n):
 ```
 
-自己运行还能看到命令行的颜色区分，此处展示不了了。
+视频展示如下:
+
+[![asciicast](https://asciinema.org/a/HToVZBcFYZTiwGtYzoacsG9Vv.svg)](https://asciinema.org/a/HToVZBcFYZTiwGtYzoacsG9Vv)
+
 **注意**：`Quoridor\QuoridorUI\uiconfig.json` 必须与 `Quoridor\QuoridorUI\panel` 相互配合，无特殊要求**请勿修改**这两个文件，详细信息见源代码。
 
 ## 自己实现机器人?
@@ -182,6 +185,9 @@ choose quit(q), prev(p) or next(n, \n):
 已放在 ```libs``` 文件夹下。
 
 [asio](https://think-async.com/Asio/)
+
 [cxxopts](https://github.com/jarro2783/cxxopts)
+
 [nlohmann-json](https://github.com/nlohmann/json)
+
 [fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser)
