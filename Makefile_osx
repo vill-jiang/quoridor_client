@@ -2,7 +2,7 @@ client_objs = obj/ClientMain.o obj/Configuration.o obj/MyPlayer.o obj/XlinePlaye
 ui_objs = obj/QuoridorUIMain.o obj/Replayer.o obj/LogLoader.o obj/ConsoleView.o obj/QuoridorUtils.o
 gcc_var = -O3 -std=c++11 -I libs/include
 
-all : QuoridorClient QuoridorUI
+all : objDir QuoridorClient QuoridorUI
 
 QuoridorUI : $(ui_objs)
 	c++ -std=c++11 -stdlib=libc++ -o bin/QuoridorUI $(ui_objs) -lpthread
@@ -38,6 +38,9 @@ obj/NetworkClient.o : QuoridorClient/NetworkClient.cpp QuoridorClient/NetworkCli
 	c++ $(gcc_var) -stdlib=libc++ -o obj/NetworkClient.o -c QuoridorClient/NetworkClient.cpp
 obj/QuoridorUtils.o : QuoridorUtils/QuoridorUtils.cpp QuoridorUtils/QuoridorUtils.h
 	c++ $(gcc_var) -stdlib=libc++ -o obj/QuoridorUtils.o -c QuoridorUtils/QuoridorUtils.cpp
+
+objDir :
+	-mkdir obj
 
 .PHONY : clean all
 clean :
