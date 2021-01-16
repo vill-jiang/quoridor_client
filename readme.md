@@ -44,10 +44,9 @@ Mode                 LastWriteTime         Length Name
 
 两个 .exe 文件即为客户端和日志复盘器。
 
-### linux 编译
-### osx 编译
+### linux 编译 & osx 编译
 
-仅在 linux 下测试，**注意：**更低版本的gcc/g++(例如 4.8.5)编译会因regex不兼容而出错。
+仅在 linux 下测试，**注意**：更低版本的gcc/g++(例如 4.8.5)编译会因regex不兼容而出错。
 
 ```shell
 $ g++ --version
@@ -94,10 +93,9 @@ game status: Ok; my loc: (5, 1); enemy loc: (5, 9)  ->  move to: (5, 2)
 game status: Ok; my loc: (5, 2); enemy loc: (5, 9); enemy new BlockBar: [(3, 2); (5, 2)]  ->  move to: (6, 2)
 game status: Ok; my loc: (6, 2); enemy loc: (5, 9); enemy new BlockBar: [(5, 2); (7, 2)]  ->  move to: (7, 2)
 game status: Ok; my loc: (7, 2); enemy loc: (5, 9); enemy new BlockBar: [(7, 0); (7, 2)]  ->  add BlockBar: [(1, 1); (3, 1)]
-game status: Ok; my loc: (7, 2); enemy loc: (5, 9); enemy new BlockBar: [(6, 1); (6, 3)]  ->  add BlockBar: [(7, 8); (9, 8)]
 ......
 game status: Ok; my loc: (5, 8); enemy loc: (1, 2)  ->  move to: (5, 9)
-Game result:Win
+Game result: Win
 Clean your player.
 All done.
 result: victory(1), defeated(0).
@@ -116,7 +114,7 @@ game status: Ok; my loc: (5, 9); enemy loc: (7, 2)  ->  add BlockBar: [(7, 0); (
 game status: Ok; my loc: (5, 9); enemy loc: (7, 2); enemy new BlockBar: [(1, 1); (3, 1)]  ->  add BlockBar: [(6, 1); (6, 3)]
 ......
 game status: Ok; my loc: (2, 2); enemy loc: (5, 8)  ->  move to: (1, 2)
-Game result:Lost
+Game result: Lost
 Clean your player.
 All done.
 result: victory(0), defeated(1).
@@ -141,28 +139,28 @@ Usage:
 ```shell
 > .\QuoridorUI.exe -l .\0_193304DEFENSIVERUN_VS_193304BASELINE.csv
 <`````````````````````````````````````````````````>
-<                    步步为营                     >
+<                     Quoridor                    >
 <      0   1   2   3   4   5   6   7   8   9      >
 <    9 *---*---*---*---*---*---*---*---*---*      >
-<      |                 V                 | ⑨   >
+<      |                 V                 | 9    >
 <    8 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ⑧   >
+<      |                                   | 8    >
 <    7 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ⑦   >
+<      |                                   | 7    >
 <    6 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ⑥   >
+<      |                                   | 6    >
 <    5 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ⑤   >
+<      |                                   | 5    >
 <    4 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ④   >
+<      |                                   | 4    >
 <    3 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ③   >
+<      |                                   | 3    >
 <    2 *   *   *   *   *   *   *   *   *   *      >
-<      |                                   | ②   >
+<      |                                   | 2    >
 <    1 *   *   *   *   *   *   *   *   *   *      >
-<      |                 A                 | ①   >
+<      |                 A                 | 1    >
 <    0 *---*---*---*---*---*---*---*---*---*      >
-<        ①  ②  ③  ④  ⑤  ⑥  ⑦  ⑧  ⑨       >
+<        1   2   3   4   5   6   7   8   9        >
 <                                                 >
 <.................................................>
 start game!
@@ -172,7 +170,7 @@ choose quit(q), prev(p) or next(n, \n):
 
 视频展示如下:
 
-[![asciicast](https://asciinema.org/a/HToVZBcFYZTiwGtYzoacsG9Vv.svg)](https://asciinema.org/a/HToVZBcFYZTiwGtYzoacsG9Vv)
+[![asciicast](https://asciinema.org/a/384440.svg)](https://asciinema.org/a/384440)
 
 **注意**：`Quoridor\QuoridorUI\uiconfig.json` 必须与 `Quoridor\QuoridorUI\panel` 相互配合，无特殊要求**请勿修改**这两个文件，详细信息见源代码。
 
