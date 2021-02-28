@@ -1,5 +1,7 @@
 # Quoridor 客户端 
 
+先来[这里](https://asciinema.org/a/384440)看看 Quoridor 是个啥。
+
 Quoridor(步步为营) 游戏客户端，快用自己的算法打败 Baseline 吧！
 
 请结合[Quoridor服务端](https://github.com/JY0284/quoridor_server)使用。
