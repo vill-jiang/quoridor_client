@@ -176,6 +176,10 @@ choose quit(q), prev(p) or next(n, \n):
 
 **注意**：`Quoridor\QuoridorUI\uiconfig.json` 必须与 `Quoridor\QuoridorUI\panel` 相互配合，无特殊要求**请勿修改**这两个文件，详细信息见源代码。
 
+## Baseline机器人
+
+[BaseLineStrategy.pdf](./BaseLineStrategy.pdf)
+
 ## 自己实现机器人?
 
 请参看源文件 ```QuoridorClient/MyPlayer.cpp``` 和 ```QuoridorClient/MyPlayer.h```及其关联的底层数据结构定义文件 ```QuoridorUtils/QuoridorUtils.cpp``` 和 ```QuoridorUtils/QuoridorUtils.h```。
