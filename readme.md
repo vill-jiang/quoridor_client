@@ -100,7 +100,7 @@ game status: Ok; my loc: (5, 8); enemy loc: (1, 2)  ->  move to: (5, 9)
 Game result: Win
 Clean your player.
 All done.
-result: victory(1), defeated(0).
+result: victory(1), defeat(0).
 ```
 
 DefensiveRun 机器人的输出：
@@ -119,7 +119,7 @@ game status: Ok; my loc: (2, 2); enemy loc: (5, 8)  ->  move to: (1, 2)
 Game result: Lost
 Clean your player.
 All done.
-result: victory(0), defeated(1).
+result: victory(0), defeat(1).
 ```
 
 此时，在服务端目录下生成一个日志文件 ```2021-01-12-22-02-32\round_1\0_193304DEFENSIVERUN_VS_193304BASELINE.csv```。
